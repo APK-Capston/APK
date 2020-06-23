@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.2">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="10dp"
+            android:gravity="bottom|center">
+            <ImageButton
+                android:id="@+id/back_btn"
+                android:layout_width="@dimen/back_width"
+                android:layout_height="@dimen/back_height"
+                android:src="@drawable/back_btn"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:background="@color/white"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:fontFamily="@font/nanumbarungothic"
+                android:textSize="30dp"
+                android:textStyle="bold"
+                android:text="공지사항"
+                android:paddingLeft="13dp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="10dp"
+            android:gravity="bottom|center">
+            <ImageView
+                android:layout_width="@dimen/logo_2_width"
+                android:layout_height="@dimen/logo_2_height"
+                android:layout_weight="1"
+                android:src="@drawable/logo_2"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="7dp"
+        android:background="@color/basicColor"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <ListView
+            android:id="@+id/notice_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@color/mainColor"
+            android:dividerHeight="2dp">
+        </ListView>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/mainColor"/>
+    </LinearLayout>
+</LinearLayout>

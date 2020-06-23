@@ -32,9 +32,9 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
                 android:fontFamily="@font/nanumbarungothic"
-                android:textSize="20dp"
+                android:textSize="19dp"
                 android:textStyle="bold"
-                android:text="사용자 등록"
+                android:text="사용자 정보 수정"
                 android:paddingLeft="13dp"/>
         </LinearLayout>
         <LinearLayout
@@ -70,18 +70,20 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:padding="25dp">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="이 름"
-                android:textStyle="bold"/>
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/name"
-                android:ems="15"
-                android:hint="이름을 입력해주세요"
-                android:inputType="text"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="이 름"
+                    android:fontFamily="@font/nanumbarungothic"
+                    android:textStyle="bold"/>
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/name"
+                    android:ems="15"
+                    android:hint="이름을 입력해주세요"
+                    android:fontFamily="@font/nanumbarungothic"
+                    android:inputType="text"/>
             </LinearLayout>
 
             <LinearLayout
@@ -99,17 +101,17 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
-                    <EditText
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/phnum_push"
-                        android:ems="10"
-                        android:hint="01012345678"
-                        android:fontFamily="@font/nanumbarungothic"
-                        android:inputType="number">
-                    </EditText>
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/phnum_push"
+                    android:ems="10"
+                    android:hint="01012345678"
+                    android:fontFamily="@font/nanumbarungothic"
+                    android:inputType="number">
+                </EditText>
                     <ImageButton
-                        android:layout_width="109dp"
+                        android:layout_width="104dp"
                         android:layout_height="30dp"
                         android:src="@drawable/check_btn"
                         android:adjustViewBounds="true"
@@ -126,17 +128,17 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/nanumbarungothic"
                     android:text="차량번호"
+                    android:fontFamily="@font/nanumbarungothic"
                     android:textStyle="bold"/>
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/nanumbarungothic"
-                android:id="@+id/cnum_push"
-                android:ems="15"
-                android:hint="20가0602"
-                android:inputType="text"/>
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/cnum_push"
+                    android:ems="15"
+                    android:hint="20가0602"
+                    android:fontFamily="@font/nanumbarungothic"
+                    android:inputType="text"/>
             </LinearLayout>
 
             <LinearLayout
@@ -168,14 +170,14 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="bottom"
                         android:paddingBottom="8dp">
-                        <ImageButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="26.5dp"
-                            android:src="@drawable/discord"
-                            android:adjustViewBounds="true"
-                            android:scaleType="fitCenter"
-                            android:background="@color/white"
-                            />
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="24.5dp"
+                        android:src="@drawable/discord"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        android:background="@color/white"
+                        />
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
@@ -190,7 +192,7 @@
         <ImageButton
             android:layout_width="250dp"
             android:layout_height="70dp"
-            android:src="@drawable/reg_push_btn"
+            android:src="@drawable/save_btn"
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"
             android:background="@color/basicColor"/>

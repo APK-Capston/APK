@@ -45,6 +45,13 @@
             android:layout_weight="0.7"
             android:padding="10dp"
             android:gravity="center">
+            <ImageButton
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/group_btn"
+                android:background="@color/white"/>
         </LinearLayout>
 
     </LinearLayout>
@@ -52,66 +59,14 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1.4"
-        android:orientation="vertical">
+        android:layout_weight="1.4">
 
-        <LinearLayout
+        <fragment
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_weight="0.3"
-                android:gravity="center">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="OOO님의 주차예약 정보"
-                android:fontFamily="@font/nanumbarungothic"
-                android:textSize="30sp"/>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:background="@drawable/reserve_stroke">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="현재 예약중인 주차장이 없습니다."
-                    android:textSize="25sp"
-                    android:padding="10dp"/>
-            </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:padding="30dp">
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:src="@drawable/main_star"
-                android:adjustViewBounds="true"
-                android:scaleType="fitCenter" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="추천 주차장"
-                android:fontFamily="@font/nanumbarungothic"
-                android:textSize="27sp"/>
-            </LinearLayout>
-        </LinearLayout>
+            android:layout_height="match_parent"
+            android:id="@+id/map"
+            tools:context=".GoMapActivity"
+            android:name="com.google.android.gms.maps.SupportMapFragment"/>
 
     </LinearLayout>
 
@@ -138,7 +93,7 @@
                 android:layout_height="match_parent"
                 android:adjustViewBounds="true"
                 android:scaleType="fitCenter"
-                android:src="@drawable/home_select_btn"
+                android:src="@drawable/home_btn"
                 android:background="@color/white"/>
         </LinearLayout>
         <LinearLayout
@@ -153,7 +108,7 @@
                 android:layout_height="match_parent"
                 android:adjustViewBounds="true"
                 android:scaleType="fitCenter"
-                android:src="@drawable/map_btn"
+                android:src="@drawable/map_select_btn"
                 android:background="@color/white"/>
         </LinearLayout>
         <LinearLayout

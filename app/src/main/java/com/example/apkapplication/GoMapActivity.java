@@ -1,8 +1,5 @@
 package com.example.apkapplication;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -10,27 +7,31 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
-public class MainActivity extends AppCompatActivity {
-    private Activity activity;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
+
+public class GoMapActivity extends AppCompatActivity implements OnMapReadyCallback {
+    private GoogleMap mMap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_map);
 
-        ImageButton back=(ImageButton)findViewById(R.id.back_btn);
-        back.setOnClickListener(new View.OnClickListener(){
+        SupportMapFragment mapFragment=(SupportMapFragment)getSupportFragmentManager().findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
+
+        ImageButton home=(ImageButton)findViewById(R.id.home_btn);
+        home.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                onBackPressed();
-            }
-        });
-
-        ImageButton map=(ImageButton)findViewById(R.id.map_btn);
-        map.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplication(), GoMapActivity.class);
+                Intent intent = new Intent(getApplication(), MainActivity.class);
                 startActivity(intent);
                 finish();
             }
@@ -55,6 +56,26 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        /*MapView mapView = new MapView(this);
+        ViewGroup mapViewContainer = findViewById(R.id.map_view);
+        mapViewContainer.addView(mapView);*/
+    }
+
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+        mMap=googleMap;
+
+        LatLng SEOUL=new LatLng(37.56, 126.97);
+
+        MarkerOptions markerOptions = new MarkerOptions();
+        markerOptions.position(SEOUL);
+        markerOptions.title("서울");
+        markerOptions.snippet("한국의 수도");
+        mMap.addMarker(markerOptions);
+
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(SEOUL, 14));
+        mMap.animateCamera(CameraUpdateFactory.zoomTo(10));
     }
 
     @Override

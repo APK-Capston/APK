@@ -40,8 +40,6 @@ public class LoginActivity extends AppCompatActivity {
                 if(phnum_login.getText().toString().equals("1234")&&cnum_login.getText().toString().equals("1234")) {
                     Intent intent = new Intent(getApplication(), MainActivity.class);
                     startActivity(intent);
-
-                    finish();
                 }
                 else{
                     Toast.makeText(getApplicationContext(), R.string.login_error_toast, Toast.LENGTH_LONG).show();
@@ -54,6 +52,15 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(getApplication(), RegistrationActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        ImageButton skip=(ImageButton)findViewById(R.id.skip_btn);
+        skip.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getApplication(), MainActivity.class);
                 startActivity(intent);
             }
         });
